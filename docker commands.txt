@@ -1,0 +1,5 @@
+docker build -t anna/docker-package-only-build-demo:1.0-SNAPSHOT .
+
+
+docker run -d -p 8080:8080 rveligeti/tweeter_accounts_module:1.0-SNAPSHOT
+
