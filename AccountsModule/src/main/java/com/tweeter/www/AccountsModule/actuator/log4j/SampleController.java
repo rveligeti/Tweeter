@@ -19,10 +19,14 @@ package com.tweeter.www.AccountsModule.actuator.log4j;
 import java.util.Collections;
 import java.util.Map;
 
+import org.apache.catalina.filters.ExpiresFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class SampleController {
@@ -35,6 +39,11 @@ public class SampleController {
 	public Map<String, String> helloWorld() {
 		return Collections.singletonMap("message",
 				this.helloWorldService.getHelloMessage());
+	}
+
+	@RequestMapping(value = "/test",method = RequestMethod.GET)
+	public void CreateAccount(HttpServletResponse response){
+		response.setStatus(ExpiresFilter.XHttpServletResponse.SC_CREATED);
 	}
 
 	@RequestMapping("/foo")

@@ -25,7 +25,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 @EnableConfigurationProperties
-@ComponentScan
+@ComponentScan(basePackages ="com.tweeter.www.AccountsModule")
 public class SampleActuatorApplication {
 
 	public static void main(String[] args) throws Exception {
