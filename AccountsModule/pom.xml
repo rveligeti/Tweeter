@@ -17,10 +17,16 @@
 		<name>Pivotal Software, Inc.</name>
 		<url>http://www.spring.io</url>
 	</organization>
+<!--	<properties>-->
+<!--		<java.version>1.8</java.version>-->
+<!--		<main.basedir>${basedir}/../..</main.basedir>-->
+<!--	</properties>-->
+
 	<properties>
-		<java.version>1.8</java.version>
-		<main.basedir>${basedir}/../..</main.basedir>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -51,7 +57,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.8</version>
+        </dependency>
+    </dependencies>
 	<build>
 		<plugins>
 			<plugin>

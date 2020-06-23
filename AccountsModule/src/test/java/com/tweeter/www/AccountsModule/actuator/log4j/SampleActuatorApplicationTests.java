@@ -18,6 +18,8 @@ package com.tweeter.www.AccountsModule.actuator.log4j;
 
 import java.util.Map;
 
+import com.tweeter.www.AccountsModule.Controller.pkg.AccountsController;
+import org.apache.catalina.filters.ExpiresFilter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +31,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+
+import javax.servlet.http.HttpServletResponse;
 
 import static org.junit.Assert.assertEquals;
 
@@ -44,6 +48,15 @@ import static org.junit.Assert.assertEquals;
 @DirtiesContext
 public class SampleActuatorApplicationTests {
 
+
+	private AccountsController controller;
+
+	public void SampleActuatorApplication(){
+		this.controller=new AccountsController();
+
+	}
+
+
 	@Value("${local.server.port}")
 	private int port;
 
@@ -57,5 +70,14 @@ public class SampleActuatorApplicationTests {
 		Map<String, Object> body = entity.getBody();
 		assertEquals("Hello Phil", body.get("message"));
 	}
+
+	@Test
+	public void testAccountsController() {
+
+//		this.controller.CreateAccount(null);
+
+	}
+
+
 
 }
